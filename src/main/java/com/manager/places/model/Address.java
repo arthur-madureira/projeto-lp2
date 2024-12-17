@@ -1,15 +1,26 @@
 package com.manager.places.model;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+
 public class Address {
-    
+
+    @NotEmpty(message = "A rua não pode estar vazia")
     private String street;
+
+    @NotEmpty(message = "A cidade não pode estar vazia")
     private String city;
+
+    @NotEmpty(message = "O estado não pode estar vazio")
     private String state;
+
+    @NotEmpty(message = "O código postal não pode estar vazio")
     private String zip;
+
+    @NotNull(message = "A localização não pode ser nula")
     private Location location;
 
-    public Address() {
-    }
+    public Address() {}
 
     public Address(String street, String city, String state, String zip, Location location) {
         this.street = street;
