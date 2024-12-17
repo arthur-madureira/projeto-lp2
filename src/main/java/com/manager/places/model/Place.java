@@ -14,17 +14,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Place {
-    
+
     @Id
     private String _id;
 
+    @NotNull(message = "O nome não pode ser nulo")
     @NotEmpty(message = "O nome não pode estar vazio")
     private String name;
 
     @NotNull(message = "O endereço não pode ser nulo")
     private Address address;
-
-    @NotNull(message = "O endereço não pode ser nulo")
-    private Location location;
-
 }
